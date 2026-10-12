@@ -26,6 +26,11 @@ export type Project = {
   source: "Full profile" | "Short biography";
   featured: boolean;
   icon: IconName;
+  /**
+   * Illustrative stock photo (Unsplash licence), not imagery of the project
+   * itself; swap in real project photos when the owner supplies them.
+   */
+  image: { src: string; source: string } | null;
 };
 
 export const profile = {
@@ -49,7 +54,8 @@ export const profile = {
   linkedinUrl: null as string | null,
   // Confirmed by the owner as WhatsApp-enabled (9 October 2026).
   whatsappNumber: "+94 777 960 231" as string | null,
-  portrait: null as string | null,
+  // Owner-supplied studio headshot (11 October 2026).
+  portrait: "/images/mahesh-ravindra.jpg" as string | null,
   profilePdf: null as string | null,
   speakerSheet: null as string | null,
   companyLogo: null as { src: string; width: number; height: number } | null,
@@ -244,6 +250,7 @@ export const projects: Project[] = [
     source: "Full profile",
     featured: true,
     icon: "layers",
+    image: { src: "/images/projects/ai-workforce-platform.jpg", source: "https://images.unsplash.com/photo-1677442136019-21780ecad995" },
   },
   {
     slug: "agentic-erp-solutions",
@@ -257,6 +264,7 @@ export const projects: Project[] = [
     source: "Full profile",
     featured: true,
     icon: "chip",
+    image: { src: "/images/projects/agentic-erp-solutions.jpg", source: "https://images.unsplash.com/photo-1551288049-bebda4e38f71" },
   },
   {
     slug: "ai-to-ai-communication-hub",
@@ -270,6 +278,7 @@ export const projects: Project[] = [
     source: "Full profile",
     featured: true,
     icon: "network",
+    image: { src: "/images/projects/ai-to-ai-communication-hub.jpg", source: "https://images.unsplash.com/photo-1451187580459-43490279c0fa" },
   },
   {
     slug: "government-sector-ai",
@@ -283,6 +292,7 @@ export const projects: Project[] = [
     source: "Full profile",
     featured: false,
     icon: "building",
+    image: { src: "/images/projects/government-sector-ai.jpg", source: "https://images.unsplash.com/photo-1554469384-e58fac16e23a" },
   },
   {
     slug: "corporate-ai-projects",
@@ -296,6 +306,7 @@ export const projects: Project[] = [
     source: "Full profile",
     featured: false,
     icon: "briefcase",
+    image: { src: "/images/projects/corporate-ai-projects.jpg", source: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" },
   },
   {
     slug: "sme-startup-onboarding",
@@ -309,6 +320,7 @@ export const projects: Project[] = [
     source: "Full profile",
     featured: false,
     icon: "rocket",
+    image: { src: "/images/projects/sme-startup-onboarding.jpg", source: "https://images.unsplash.com/photo-1460925895917-afdab827c52f" },
   },
   {
     slug: "agent-dilu-partnership",
@@ -322,6 +334,7 @@ export const projects: Project[] = [
     source: "Full profile",
     featured: false,
     icon: "handshake",
+    image: { src: "/images/projects/agent-dilu-partnership.jpg", source: "https://images.unsplash.com/photo-1521791136064-7986c2920216" },
   },
   {
     slug: "ev-cafe-concept",
@@ -335,6 +348,7 @@ export const projects: Project[] = [
     source: "Short biography",
     featured: false,
     icon: "cup",
+    image: { src: "/images/projects/ev-cafe-concept.jpg", source: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" },
   },
   {
     slug: "green-miracle-engineering",
@@ -348,6 +362,7 @@ export const projects: Project[] = [
     source: "Short biography",
     featured: true,
     icon: "leaf",
+    image: { src: "/images/projects/green-miracle-engineering.jpg", source: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7" },
   },
 ];
 

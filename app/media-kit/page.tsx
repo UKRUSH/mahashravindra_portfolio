@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CopyButton } from "@/components/CopyButton";
 import { Icon } from "@/components/Icon";
 import { InviteToSpeakButton } from "@/components/InviteToSpeakButton";
@@ -54,9 +55,13 @@ export default function MediaKitPage() {
 
           <div className="speaker-card">
             <div className="speaker-card-head">
-              <span className="speaker-monogram" aria-hidden="true">
-                {profile.initials}
-              </span>
+              {profile.portrait ? (
+                <Image className="speaker-photo" src={profile.portrait} alt="" width={64} height={64} />
+              ) : (
+                <span className="speaker-monogram" aria-hidden="true">
+                  {profile.initials}
+                </span>
+              )}
               <div>
                 <p className="speaker-name">{profile.name}</p>
                 <p className="speaker-title">{profile.title}</p>

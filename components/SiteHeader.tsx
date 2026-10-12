@@ -70,7 +70,7 @@ export function SiteHeader() {
         <div className="header-actions">
           <ThemeToggle />
           <HashLink className="btn btn--primary header-cta" href="/#contact">
-            Let&apos;s Talk
+            Let&apos;s Talk <Icon name="arrowRight" />
           </HashLink>
           <button
             ref={toggleRef}
@@ -80,7 +80,12 @@ export function SiteHeader() {
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
           >
-            <Icon name={open ? "close" : "menu"} />
+            {/* Three bars that morph into an X via aria-expanded (globals.css). */}
+            <span className="menu-bars" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
             <span className="sr-only">Menu</span>
           </button>
         </div>
@@ -90,7 +95,7 @@ export function SiteHeader() {
         <div className="container">
           {navLinks.map((link) => (
             <HashLink key={link.href} href={link.href} onClick={close}>
-              {link.label}
+              {link.label} <Icon name="arrowRight" />
             </HashLink>
           ))}
           <HashLink className="btn btn--primary" href="/#contact" onClick={close}>
